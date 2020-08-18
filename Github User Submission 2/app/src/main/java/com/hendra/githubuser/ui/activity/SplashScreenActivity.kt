@@ -12,19 +12,27 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SplashScreen : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_splash_screen)
 
+        splashScreenAnimation()
+        moveToMainActivity()
+    }
+
+    private fun splashScreenAnimation() {
         val splashScreenAnim = AnimationUtils.loadAnimation(this, R.anim.splash_screen_anim)
 
         splashScreenImage.animation = splashScreenAnim
+        tvSplashScreen.animation = splashScreenAnim
+    }
 
+    private fun moveToMainActivity() {
         GlobalScope.launch {
             delay(5000)
-            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
         }
     }
 }
