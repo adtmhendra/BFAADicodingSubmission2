@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         searchView.setSearchableInfo(searchableInfo)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            // when search icon was pressed
+            // when search icon is pressed
             override fun onQueryTextSubmit(query: String): Boolean {
                 showToast(this@MainActivity, query)
                 return true
