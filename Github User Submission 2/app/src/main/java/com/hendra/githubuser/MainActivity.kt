@@ -1,6 +1,8 @@
 package com.hendra.githubuser
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -18,16 +20,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
-        when(menuItem.itemId) {
-            R.id.changeLanguage -> {
-
-            }
-
-            R.id.about -> {
-
-            }
+        if (menuItem.itemId == R.id.changeLanguage) {
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(intent)
+            return true
+        } else {
+            return true
         }
-        return true
     }
-
 }

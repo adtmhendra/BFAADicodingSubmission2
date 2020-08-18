@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/github" />
+        app:srcCompat="@drawable/github"
+        android:contentDescription="@string/splash_screen_picture" />
 
     <TextView
         android:id="@+id/tvSplashScreen"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/satisfy"
-        android:text="Created by Hendra"
+        android:text="@string/created_by_hendra"
         android:textColor="#575151"
         android:textSize="18sp"
         android:textStyle="bold"
