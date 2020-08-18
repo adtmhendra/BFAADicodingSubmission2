@@ -1,10 +1,10 @@
 package com.hendra.githubuser.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import com.hendra.githubuser.MainActivity
 import com.hendra.githubuser.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
@@ -31,8 +31,9 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun moveToMainActivity() {
         GlobalScope.launch {
-            delay(5000)
+            delay(1500)
             startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+            finish()
         }
     }
 }
