@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Github User</string>
+    <string name="couldnt_find_result">Hasil tidak ditemukan</string>
+    <string name="use_search_feature">Gunakan fitur pencarian untuk menemukan data yang ingin kamu cari, ya!</string>
 </resources>
