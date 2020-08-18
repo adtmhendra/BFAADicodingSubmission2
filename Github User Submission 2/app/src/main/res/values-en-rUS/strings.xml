@@ -8,4 +8,6 @@
     <string name="about">About</string>
     <string name="empty_image_picture">Empty image picture</string>
     <string name="splash_screen_picture">Splash screen  picture</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
 </resources>

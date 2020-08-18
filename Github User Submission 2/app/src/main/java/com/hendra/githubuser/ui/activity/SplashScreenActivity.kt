@@ -25,8 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private fun splashScreenAnimation() {
         val splashScreenAnim = AnimationUtils.loadAnimation(this, R.anim.splash_screen_anim)
 
-        splashScreenImage.animation = splashScreenAnim
-        tvSplashScreen.animation = splashScreenAnim
+        imgSplashScreen.animation = splashScreenAnim
     }
 
     private fun moveToMainActivity() {

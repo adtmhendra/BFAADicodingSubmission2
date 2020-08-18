@@ -8,4 +8,6 @@
     <string name="empty_image_picture">Gambar data kosong</string>
     <string name="created_by_hendra" translatable="false">Created by Hendra</string>
     <string name="splash_screen_picture">Splash screen picture</string>
+    <string name="name">Nama</string>
+    <string name="company">Perusahaan</string>
 </resources>
