@@ -10,4 +10,6 @@
     <string name="splash_screen_picture">Splash screen  picture</string>
     <string name="name">Name</string>
     <string name="company">Company</string>
+    <string name="github_link">Github Link</string>
+    <string name="you_choose">You choose :</string>
 </resources>
