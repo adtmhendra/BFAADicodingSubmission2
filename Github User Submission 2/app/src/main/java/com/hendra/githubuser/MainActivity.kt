@@ -7,45 +7,15 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.hendra.githubuser.adapter.SearchViewAdapter
-import com.hendra.githubuser.model.ItemsItem
-import com.hendra.githubuser.viewmodel.SearchViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.users_row.*
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var adapter: SearchViewAdapter
-    private lateinit var searchViewModel: SearchViewModel
-    val listItems = ArrayList<ItemsItem>()
-
-    companion object {
-        val TAG = MainActivity::class.java.simpleName
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        adapter = SearchViewAdapter(listItems)
-        rvSearchView.layoutManager = LinearLayoutManager(this)
-        rvSearchView.adapter = adapter
-
-        searchViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(searchViewModel::class.java)
-
-        searchViewModel.getUser().observe(this, Observer {
-            if (it != null) {
-                listItems.add(it)
-                showProgressBar(false)
-            }
-        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -73,9 +43,7 @@ class MainActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             // when search icon is pressed
             override fun onQueryTextSubmit(query: String): Boolean {
-                showProgressBar(true)
-                showEmptyData(false)
-                searchViewModel.setUser(query)
+                showToast(this@MainActivity, query)
                 return true
             }
 
@@ -86,24 +54,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun showProgressBar(boolean: Boolean) {
-        if (boolean) progressBar.visibility = View.VISIBLE
-        else progressBar.visibility = View.INVISIBLE
-    }
-
-    private fun showEmptyData(boolean: Boolean) {
-        if (boolean) {
-            imgAddData.visibility = View.VISIBLE
-            tvName.visibility = View.VISIBLE
-            tvDescription.visibility = View.VISIBLE
-        } else {
-            imgAddData.visibility = View.INVISIBLE
-            tvName.visibility = View.INVISIBLE
-            tvDescription.visibility = View.INVISIBLE
-        }
-    }
-
-    private fun showToast(context: Context, message: String) {
+    fun showToast(context: Context, message: String) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
