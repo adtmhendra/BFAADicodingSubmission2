@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="">
-        <activity android:name=".view.activity.DetailActivity">
+        <activity android:name=".ui.activity.DetailActivity">
         </activity>
         <activity
-            android:name=".view.activity.SplashScreenActivity"
+            android:name=".ui.activity.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

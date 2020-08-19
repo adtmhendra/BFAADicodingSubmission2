@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hendra.githubuser.R
 import com.hendra.githubuser.model.ItemsItem
-import com.hendra.githubuser.view.activity.DetailActivity
+import com.hendra.githubuser.ui.activity.DetailActivity
 import kotlinx.android.synthetic.main.users_row.view.*
 
 class SearchViewAdapter(private val listItem: ArrayList<ItemsItem>) : RecyclerView.Adapter<SearchViewAdapter.SearchViewHolder>() {
