@@ -1,4 +1,4 @@
-package com.hendra.githubuser.ui.activity
+package com.hendra.githubuser.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
